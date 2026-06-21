@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apoorva Srinivasan | Backend & Systems Engineer</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Instrument+Serif&family=Instrument+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="textured">
+    <div id="app">
+        <!-- Persistent Side Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-top">
+                <div class="profile-block">
+                    <div class="avatar-frame">
+                        <img src="assets/profile.jpeg" alt="Apoorva" class="avatar-img">
+                    </div>
+                    <h1 class="brand-name">Apoorva<span class="dot">.</span></h1>
+                </div>
+                <nav class="side-nav">
+                    <a href="#about" class="nav-item active">About</a>
+                    <a href="#experience" class="nav-item">Career</a>
+                    <a href="#projects" class="nav-item">Code</a>
+                    <a href="#awards" class="nav-item">Awards</a>
+                    <a href="#skills" class="nav-item">Toolkit</a>
+                </nav>
+            </div>
+            <div class="sidebar-bottom">
+                <div class="social-dock">
+                    <a href="https://github.com/Apoorva5544" target="_blank" title="GitHub">GH</a>
+                    <a href="https://linkedin.com/in/apoorva-srinivasan-bba609258" target="_blank"
+                        title="LinkedIn">LI</a>
+                    <a href="mailto:apoorvasrinivasan59@gmail.com" title="Email">✉</a>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Horizontal Scroll Section -->
+        <main id="horizontal-track">
+
+            <!-- SECTION 1: THE HOOK -->
+            <section class="pane intro-pane" id="about">
+                <div class="pane-content wide-content">
+                    <h2 class="serif-headline">Backend Engineer<br>Building <span class="italic">Scalable</span>
+                        Systems.</h2>
+                    <div class="intro-card card">
+                        <p class="highlight-text">Winner, <strong>LTTS Techgium 2025</strong> (Rs. 10 Lakhs). Backend
+                            software engineer graduating <strong>May 2026</strong>.</p>
+                        <p class="body-text">Production experience building reliable, scalable enterprise services in
+                            <strong>Python, Java (Familiar), and SQL</strong>. Proven track record shipping and
+                            maintaining backend systems across the full development lifecycle. Comfortable in Agile
+                            environments and delivering solutions for rapidly evolving product requirements.
+                        </p>
+                        <div class="speaker-tag">
+                            <strong>Speaker at Tekshetra:</strong> Presented underwater robot technical architecture to
+                            LTTS engineers.
+                        </div>
+                    </div>
+                    <div class="stats-grid">
+                        <div class="stat-box card">
+                            <span class="stat-val">272+</span>
+                            <span class="stat-lbl">LeetCode Solved</span>
+                        </div>
+                        <div class="stat-box card">
+                            <span class="stat-val">PR #7176</span>
+                            <span class="stat-lbl">ChromaDB Contrib</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 2: CAREER -->
+            <section class="pane career-pane" id="experience">
+                <div class="pane-content wide-content">
+                    <h2 class="section-title">Career Journey</h2>
+                    <div class="long-timeline">
+                        <div class="tl-item">
+                            <span class="tl-year">Jul 2025 – Present</span>
+                            <div class="tl-content card">
+                                <h3>Software Engineering Intern</h3>
+                                <p class="org">Spatial Guide | Hyderabad (On-site)</p>
+                                <ul class="bullet-list">
+                                    <li>Developed and maintained production-grade <strong>RESTful APIs (FastAPI /
+                                            Python)</strong> deployed as serverless microservices on <strong>AWS
+                                            Lambda</strong> with DynamoDB, handling <strong>1,000+ req/day</strong> at
+                                        sub-200ms p99 latency.</li>
+                                    <li>Containerised the full service stack using <strong>Docker</strong>; managed
+                                        inter-service networking, environment isolation, and health checks.</li>
+                                    <li>Built and maintained <strong>CI/CD pipelines (GitHub Actions)</strong> covering
+                                        automated build, test, and deployment stages; enabled zero-downtime releases.
+                                    </li>
+                                    <li>Configured <strong>CloudWatch dashboards</strong> and SNS alerting to debug
+                                        latency spikes; reduced MTTR from hours to <strong>under 5 minutes</strong>.
+                                    </li>
+                                    <li>Collaborated with stakeholders to build <strong>Salesforce Experience
+                                            Cloud</strong> portals; reduced manual data-entry workflows by
+                                        <strong>40%</strong>.
+                                    </li>
+                                    <li>Automated 15+ internal workflows saving <strong>~8 engineer-hours/week</strong>.
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="tl-item">
+                            <span class="tl-year">Jun 2024 – Jul 2024</span>
+                            <div class="tl-content card">
+                                <h3>Robotics Intern</h3>
+                                <p class="org">Robomiracle</p>
+                                <ul class="bullet-list">
+                                    <li>Wrote C/Python scripts for Arduino automation; implemented sensor fusion
+                                        (MPU-9250 IMU) for robotics precision.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 3: CODE (OS + PROJECTS) -->
+            <section class="pane project-pane" id="projects">
+                <div class="pane-content wide-content">
+                    <h2 class="section-title">Technical Contributions</h2>
+
+                    <div class="os-card card">
+                        <div class="card-header">
+                            <span class="badge merged">Merged</span>
+                            <h3>ChromaDB Contribution</h3>
+                        </div>
+                        <p class="os-desc">Fixed migrations hash algorithm defaulting to deprecated md5; changed default
+                            to <strong>sha256</strong> with backward-compatibility guidance. Merged into
+                            <strong>chroma-core/chroma</strong> (2.3k+ stars).
+                        </p>
+                    </div>
+
+                    <div class="projects-featured-grid">
+                        <a href="https://github.com/Apoorva5544/Infiniflow" target="_blank" class="project-stack card">
+                            <h3>Infiniflow — RAG Platform ↗</h3>
+                            <p class="project-summary">FastAPI, LangChain, SQLAlchemy, SQLite, ChromaDB, BM25, HF, Groq,
+                                Docker, React, Streamlit</p>
+                            <ul class="bullet-list">
+                                <li>Built end-to-end RAG platform: FastAPI backend, JWT auth, history-aware
+                                    reformulation.</li>
+                                <li>Integrated Groq (Llama 3) & HF embeddings; semantic caching & agentic routing.</li>
+                                <li>React frontend + Streamlit dashboard; Pytest suite for core API paths.</li>
+                            </ul>
+                        </a>
+
+                        <a href="https://github.com/Apoorva5544/loyalty-platform" target="_blank"
+                            class="project-stack card">
+                            <h3>Loyalty Platform ↗</h3>
+                            <p class="project-summary">FastAPI, SQLAlchemy, Next.js 13, TypeScript, Tailwind, JWT,
+                                Docker, Nginx, AWS EC2</p>
+                            <ul class="bullet-list">
+                                <li>B2B enterprise platform: Modular routers, Next.js 13 dashboard with Recharts.</li>
+                                <li>Points expiration engine, automated campaigns, multi-currency tracking; Docker
+                                    Compose + Nginx.</li>
+                            </ul>
+                        </a>
+                    </div>
+
+                    <div class="more-code-grid scroll-grid">
+                        <a href="https://github.com/Apoorva5544/async-invoice-service" target="_blank"
+                            class="code-item-detailed card">
+                            <h4>Async Invoice ↗</h4>
+                            <p>Celery + Redis worker offloads; Docker architecture for scale.</p>
+                        </a>
+                        <a href="https://github.com/Apoorva5544/vibe-coder" target="_blank"
+                            class="code-item-detailed card">
+                            <h4>Vibe Coder ↗</h4>
+                            <p>VS Code extension streaming <strong>Gemini 2.5</strong> via SSE.</p>
+                        </a>
+                        <a href="https://github.com/Apoorva5544/thumbnail-microservice" target="_blank"
+                            class="code-item-detailed card">
+                            <h4>Thumbnails ↗</h4>
+                            <p>FastAPI microservice with GitHub Actions CI/CD pipeline.</p>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 4: AWARDS (HACKATHONS + ACADEMIC) -->
+            <section class="pane awards-pane" id="awards">
+                <div class="pane-content">
+                    <h2 class="section-title">Awards & Hackathons</h2>
+
+                    <!-- Techgium Win -->
+                    <div class="featured-award card">
+                        <img src="assets/techgium-win.jpeg" alt="Techgium Win" class="award-hero-img">
+                        <div class="award-meta">
+                            <h4>Techgium 8th Edition Winner</h4>
+                            <p>Rs. 10 Lakhs Prize • L&T Technology Services</p>
+                        </div>
+                    </div>
+
+                    <div class="awards-masonry">
+                        <div class="award-card card">
+                            <img src="assets/best-outgoing.jpeg" alt="Best Outgoing">
+                            <span class="award-name">Best Outgoing Student</span>
+                        </div>
+                        <div class="award-card card">
+                            <img src="assets/best-academic.jpeg" alt="Academic Performer">
+                            <span class="award-name">Best Academic Performer</span>
+                        </div>
+                    </div>
+
+                    <div class="other-wins card">
+                        <p><strong>SIH 2024:</strong> National Round 3 Shortlist</p>
+                        <p><strong>Science Day:</strong> 1st Place Winner 2023</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 7: SKILLS & CERTS (BENTO) -->
+            <section class="pane toolkit-pane" id="skills">
+                <div class="pane-content wide-content">
+                    <h2 class="section-title">Technical Toolkit</h2>
+
+                    <div class="toolkit-grid">
+                        <div class="toolkit-category card">
+                            <h5>Backend & Systems</h5>
+                            <p>Python (production), FastAPI, Flask, asyncio, REST APIs, gRPC, WebSocket, SSE, Pydantic,
+                                SQLAlchemy, Alembic, Celery</p>
+                        </div>
+                        <div class="toolkit-category card">
+                            <h5>Infrastructure & Orchestration</h5>
+                            <p>Docker, Docker Compose, Kubernetes (K8s), HELM charts, container networking,
+                                provisioning, scheduling, service health management</p>
+                        </div>
+                        <div class="toolkit-category card">
+                            <h5>Cloud (AWS)</h5>
+                            <p>Lambda, API Gateway, S3, DynamoDB, CloudWatch, IAM, Secrets Manager, SNS; familiar with
+                                SageMaker notebook and training infrastructure</p>
+                        </div>
+                        <div class="toolkit-category card">
+                            <h5>Databases</h5>
+                            <p>SQLite, PostgreSQL, Redis, DynamoDB, MongoDB, MySQL, ChromaDB (vector)</p>
+                        </div>
+                        <div class="toolkit-category card">
+                            <h5>Reliability & Observability</h5>
+                            <p>CloudWatch metrics/alarms, structured logging, latency profiling, idempotency and retry
+                                patterns, async task queue design</p>
+                        </div>
+                        <div class="toolkit-category card">
+                            <h5>Metering & Quota</h5>
+                            <p>Per-tenant resource isolation, configurable expiry and quota policies,
+                                resource-accounting logic (built in Loyalty Platform and Infiniflow)</p>
+                        </div>
+                        <div class="toolkit-category card">
+                            <h5>ML Infrastructure</h5>
+                            <p>HuggingFace model serving, Groq LLM API integration, embedding pipeline orchestration;
+                                familiar with SageMaker and Vertex AI</p>
+                        </div>
+                        <div class="toolkit-category card">
+                            <h5>DevOps & CI/CD</h5>
+                            <p>GitHub Actions, Jenkins-compatible pipelines, Infrastructure-as-Code patterns,
+                                zero-downtime deployments</p>
+                        </div>
+                        <div class="toolkit-category card">
+                            <h5>Other Toolkit</h5>
+                            <p>TypeScript, React, Next.js (familiar), Node.js (familiar), C/C++, Bash, Agile/Scrum</p>
+                        </div>
+                    </div>
+
+                    <div class="certs-grid">
+                        <div class="cert-item card">
+                            <img src="assets/rag-cert.png" alt="RAG Sticker" class="cert-icon">
+                            <span>Intro to RAG</span>
+                        </div>
+                        <div class="cert-item card">
+                            <span>MongoDB Certified</span>
+                        </div>
+                        <div class="cert-item card image-cert">
+                            <img src="assets/aws-cert.jpg" alt="AWS Certificate" class="cert-full-img">
+                            <div class="cert-label">AWS Developer Associate</div>
+                        </div>
+                        <div class="cert-item card image-cert">
+                            <img src="assets/build-smarter-ai.png" alt="Build Smarter AI Certificate"
+                                class="cert-full-img">
+                            <div class="cert-label">Build Smarter AI with Embeddings</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- Custom Cursor / Interaction stuff can go here -->
+    </div>
+
+    <script type="module" src="main.js"></script>
+</body>
+
+</html>

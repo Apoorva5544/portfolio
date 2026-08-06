@@ -1,56 +1,48 @@
-const track = document.getElementById('horizontal-track');
-const navItems = document.querySelectorAll('.nav-item');
-const panes = document.querySelectorAll('.pane');
+// Premium Portfolio — scroll reveals, nav state, progress bar
+const nav = document.getElementById('siteNav');
+const progress = document.getElementById('progressBar');
+const navLinks = document.querySelectorAll('.nav-link');
+const sections = document.querySelectorAll('.section[id]');
+const reveals = document.querySelectorAll('.reveal');
 
-// Sync navigation active state with scroll position using Intersection Observer feel
-function updateActiveNav() {
-    let current = "";
-    panes.forEach((pane) => {
-        const paneLeft = pane.offsetLeft;
-        if (track.scrollLeft >= paneLeft - track.offsetWidth / 2) {
-            current = pane.getAttribute("id");
+// Stagger reveal delays for grids
+document.querySelectorAll('.toolkit-card, .award-card, .mini-card, .featured-card').forEach((el, i) => {
+    el.style.setProperty('--rd', `${(i % 3) * 0.08}s`);
+});
+
+// Intersection Observer for reveal-on-scroll
+const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('in');
+            revealObserver.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+
+reveals.forEach((el) => revealObserver.observe(el));
+
+// Nav background + scroll progress + active link
+function onScroll() {
+    const y = window.scrollY;
+    nav.classList.toggle('scrolled', y > 40);
+
+    const height = document.documentElement.scrollHeight - window.innerHeight;
+    progress.style.width = `${(y / height) * 100}%`;
+
+    let current = 'home';
+    sections.forEach((sec) => {
+        if (y >= sec.offsetTop - window.innerHeight * 0.4) {
+            current = sec.id;
         }
     });
 
-    navItems.forEach((item) => {
-        item.classList.remove("active");
-        if (item.getAttribute("href").includes(current)) {
-            item.classList.add("active");
-        }
+    navLinks.forEach((link) => {
+        link.classList.toggle('active', link.getAttribute('href') === `#${current}`);
     });
 }
 
-track.addEventListener('scroll', updateActiveNav);
+window.addEventListener('scroll', onScroll, { passive: true });
+onScroll();
 
-// Click to scroll to pane
-navItems.forEach((item) => {
-    item.addEventListener('click', (e) => {
-        e.preventDefault();
-        const targetId = item.getAttribute('href').substring(1);
-        const targetPane = document.getElementById(targetId);
-        track.scrollTo({
-            left: targetPane.offsetLeft,
-            behavior: 'smooth'
-        });
-    });
-});
-
-// Precise wheel to horizontal scroll
-track.addEventListener('wheel', (e) => {
-    if (Math.abs(e.deltaX) < Math.abs(e.deltaY)) {
-        e.preventDefault();
-        track.scrollLeft += e.deltaY;
-    }
-}, { passive: false });
-
-// Keyboard arrow support
-window.addEventListener('keydown', (e) => {
-    const paneWidth = track.firstElementChild.offsetWidth;
-    if (e.key === 'ArrowRight') {
-        track.scrollBy({ left: paneWidth, behavior: 'smooth' });
-    } else if (e.key === 'ArrowLeft') {
-        track.scrollBy({ left: -paneWidth, behavior: 'smooth' });
-    }
-});
-
-console.log('Premium Hand-crafted Portfolio Initialized');
+console.log('Hello, I am Apoorva — premium portfolio initialized.');

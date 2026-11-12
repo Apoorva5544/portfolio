@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite';
 
 export default defineConfig({
-    base: './',
+    // This repository is published as a project site at /portfolio/.
+    base: '/portfolio/',
 });

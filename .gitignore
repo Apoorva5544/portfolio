@@ -2,7 +2,7 @@ node_modules
 _source_assets
 .DS_Store
 .vscode
-package-lock.json
 *.zip
 *.pdf
+!public/assets/Apoorva_Srinivasan_Resume.pdf
 *.tex

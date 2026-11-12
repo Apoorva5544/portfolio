@@ -6,8 +6,8 @@
   <meta name="theme-color" content="#ffffff">
   <meta name="description" content="Apoorva Srinivasan is a software engineer building backend systems, cloud services, and GenAI applications.">
   <title>Apoorva Srinivasan | Software Engineer</title>
-  <script type="module" crossorigin src="/portfolio/assets/index-402dExBE.js"></script>
-  <link rel="stylesheet" crossorigin href="/portfolio/assets/index-Df6Jw1oZ.css">
+  <script type="module" crossorigin src="/portfolio/assets/index-wCxXqVAj.js"></script>
+  <link rel="stylesheet" crossorigin href="/portfolio/assets/index-CLCtIMzL.css">
 </head>
 <body>
   <div class="topline" id="topline"></div>
@@ -76,6 +76,80 @@
         <article class="project-card"><div class="project-top"><span>DOCUMENT RAG</span><div class="project-links"><a href="https://infiniflow-prod.onrender.com" target="_blank" rel="noreferrer">DEMO ↗</a><a href="https://github.com/Apoorva5544/Infiniflow" target="_blank" rel="noreferrer">CODE ↗</a><a href="https://github.com/Apoorva5544/Infiniflow#built-in-evaluation-ragas" target="_blank" rel="noreferrer">EVALUATION ↗</a></div></div><h3>Infiniflow</h3><p class="project-deck">Multi-tenant retrieval-augmented generation</p><p class="project-copy">Turns uploaded PDFs into cited answers using chunking, embeddings, hybrid vector + BM25 retrieval, and cross-encoder reranking. Routes direct, multi-hop, and comparison questions; streams responses and caches semantically.</p><div class="tech-list"><span>FastAPI</span><span>React</span><span>ChromaDB</span><span>LangChain</span><span>Redis</span><span>RAGAS</span></div></article>
         <article class="project-card"><div class="project-top"><span>LOYALTY PLATFORM</span><div class="project-links"><a href="https://github.com/Apoorva5544/Loyalty-management-platform-" target="_blank" rel="noreferrer">CODE ↗</a><a href="https://github.com/Apoorva5544/Loyalty-management-platform-/blob/main/README.md" target="_blank" rel="noreferrer">README ↗</a></div></div><h3>Loyalty Platform</h3><p class="project-deck">Full-stack loyalty management platform</p><p class="project-copy">A B2B platform for loyalty points, rewards, campaigns, and analytics, built with a FastAPI backend and Next.js dashboard. Explore the repository for setup, implementation details, and deployment guide.</p><div class="tech-list"><span>FastAPI</span><span>Next.js</span><span>TypeScript</span><span>SQLAlchemy</span><span>SQLite</span><span>Docker</span></div></article>
         <article class="project-card project-award"><div class="project-top"><span>UNDERWATER ROBOTICS</span><span class="award-mark">₹10 lakh award</span></div><h3>Inspection Robot</h3><p class="project-deck">LTTS Techgium winning prototype</p><p class="project-copy">Built a robot prototype for controlled surface navigation followed by underwater operation. Integrated a live camera feed for surveillance and data collection underwater.</p><div class="tech-list"><span>Microcontrollers</span><span>Sensors</span><span>Actuators</span><span>Camera systems</span></div></article>
+      </div>
+      <div class="architecture-section">
+        <div class="architecture-heading"><h3>How the systems work</h3><p>Two project architectures, from incoming request to result.</p></div>
+        <article class="architecture-item">
+          <div class="architecture-intro"><span>AGENTMESH</span><h4>One gateway, multiple models and tools</h4><p>Requests pass through authentication, caching, safety checks, and routing. The gateway sends work to a model provider or an MCP tool and records the run.</p><a href="https://github.com/Apoorva5544/Agentmesh#architecture" target="_blank" rel="noreferrer">Full architecture in README ↗</a></div>
+          <figure class="architecture-figure">
+            <figcaption>REQUEST PATH</figcaption>
+            <div class="diagram-scroll">
+              <svg class="architecture-svg agentmesh-svg" viewBox="0 0 1060 250" role="img" aria-labelledby="agentmesh-title agentmesh-description">
+                <title id="agentmesh-title">Agentmesh request architecture</title>
+                <desc id="agentmesh-description">A client request moves through key authentication and rate limits, semantic cache and guardrails, routing and budget enforcement, then to a model provider or MCP tool. Redis, PostgreSQL, and OpenTelemetry support the gateway.</desc>
+                <defs><marker id="agent-arrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0 0L8 4L0 8" fill="none" stroke="#64748b" stroke-width="1.5"/></marker></defs>
+                <g class="diagram-flow">
+                  <path d="M180 91H211M376 91H407M588 91H619M796 91H827" marker-end="url(#agent-arrow)"/>
+                  <rect x="20" y="48" width="160" height="86" rx="5" class="diagram-node"/>
+                  <rect x="216" y="48" width="160" height="86" rx="5" class="diagram-node diagram-node-accent"/>
+                  <rect x="412" y="48" width="176" height="86" rx="5" class="diagram-node"/>
+                  <rect x="624" y="48" width="172" height="86" rx="5" class="diagram-node diagram-node-accent"/>
+                  <rect x="832" y="48" width="208" height="86" rx="5" class="diagram-node"/>
+                  <text x="100" y="80" class="diagram-title">Client</text><text x="100" y="104" class="diagram-copy">SDK · IDE · app</text>
+                  <text x="296" y="78" class="diagram-title">Access</text><text x="296" y="101" class="diagram-copy">API key · rate limit</text>
+                  <text x="500" y="77" class="diagram-title">Request controls</text><text x="500" y="100" class="diagram-copy">Semantic cache · PII checks</text><text x="500" y="119" class="diagram-copy">Schema validation</text>
+                  <text x="710" y="77" class="diagram-title">Route and enforce</text><text x="710" y="100" class="diagram-copy">Model choice · budgets</text><text x="710" y="119" class="diagram-copy">Fallback · circuit breaker</text>
+                  <text x="936" y="76" class="diagram-title">Execution</text><text x="936" y="100" class="diagram-copy">OpenAI · Anthropic · Ollama</text><text x="936" y="119" class="diagram-copy">MCP tools</text>
+                  <path d="M296 134V174M500 134V174M710 134V174M936 134V174M296 174H936" class="diagram-support-line"/>
+                  <rect x="216" y="177" width="824" height="45" rx="4" class="diagram-support"/>
+                  <text x="628" y="196" class="diagram-support-title">OBSERVABILITY AND STATE</text>
+                  <text x="628" y="213" class="diagram-support-copy">Redis: cache and limits  ·  PostgreSQL: runs and cost ledger  ·  OpenTelemetry: traces</text>
+                </g>
+              </svg>
+            </div>
+          </figure>
+        </article>
+        <article class="architecture-item">
+          <div class="architecture-intro"><span>INFINIFLOW</span><h4>Index documents, retrieve evidence, stream cited answers</h4><p>Ingestion builds vector and keyword indexes. At query time, retrieval combines both, reranks results, and passes selected evidence to answer generation.</p><a href="https://github.com/Apoorva5544/Infiniflow#architecture" target="_blank" rel="noreferrer">Full architecture in README ↗</a></div>
+          <figure class="architecture-figure">
+            <figcaption>DOCUMENT AND QUERY PATHS</figcaption>
+            <div class="diagram-scroll">
+              <svg class="architecture-svg infiniflow-svg" viewBox="0 0 1060 360" role="img" aria-labelledby="infiniflow-title infiniflow-description">
+                <title id="infiniflow-title">Infiniflow document and query architecture</title>
+                <desc id="infiniflow-description">Documents are chunked and embedded into vector and BM25 indexes. User questions are routed and reformulated, retrieve from both indexes, are reranked, and sent to an LLM that returns a cited streamed answer.</desc>
+                <defs><marker id="rag-arrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0 0L8 4L0 8" fill="none" stroke="#64748b" stroke-width="1.5"/></marker></defs>
+                <g class="diagram-flow">
+                  <text x="20" y="26" class="diagram-lane-label">DOCUMENT INGESTION</text>
+                  <path d="M202 86H240M466 86H504M772 86H812" marker-end="url(#rag-arrow)"/>
+                  <rect x="20" y="48" width="182" height="76" rx="5" class="diagram-node"/>
+                  <rect x="245" y="48" width="221" height="76" rx="5" class="diagram-node"/>
+                  <rect x="509" y="48" width="263" height="76" rx="5" class="diagram-node diagram-node-accent"/>
+                  <rect x="817" y="48" width="223" height="76" rx="5" class="diagram-node"/>
+                  <text x="111" y="79" class="diagram-title">Documents</text><text x="111" y="101" class="diagram-copy">PDF upload</text>
+                  <text x="355" y="77" class="diagram-title">Parse and chunk</text><text x="355" y="100" class="diagram-copy">Recursive · semantic</text>
+                  <text x="640" y="76" class="diagram-title">Build indexes</text><text x="640" y="99" class="diagram-copy">Embeddings · ChromaDB</text><text x="640" y="116" class="diagram-copy">BM25 · optional entity graph</text>
+                  <text x="928" y="77" class="diagram-title">Workspace storage</text><text x="928" y="100" class="diagram-copy">PostgreSQL metadata</text>
+
+                  <text x="20" y="179" class="diagram-lane-label">QUESTION AND ANSWER</text>
+                  <path d="M202 244H240M420 244H458M686 244H724M864 244H902" marker-end="url(#rag-arrow)"/>
+                  <rect x="20" y="205" width="182" height="78" rx="5" class="diagram-node"/>
+                  <rect x="245" y="205" width="175" height="78" rx="5" class="diagram-node diagram-node-accent"/>
+                  <rect x="463" y="205" width="223" height="78" rx="5" class="diagram-node"/>
+                  <rect x="729" y="205" width="135" height="78" rx="5" class="diagram-node diagram-node-accent"/>
+                  <rect x="907" y="205" width="133" height="78" rx="5" class="diagram-node"/>
+                  <text x="111" y="238" class="diagram-title">User question</text><text x="111" y="261" class="diagram-copy">with chat history</text>
+                  <text x="332" y="235" class="diagram-title">Hybrid retrieval</text><text x="332" y="258" class="diagram-copy">Vector + BM25 search</text>
+                  <text x="574" y="235" class="diagram-title">Rerank and plan</text><text x="574" y="258" class="diagram-copy">Cross-encoder · query routing</text>
+                  <text x="796" y="235" class="diagram-title">Generate</text><text x="796" y="258" class="diagram-copy">LLM with selected evidence</text>
+                  <text x="973" y="235" class="diagram-title">Answer</text><text x="973" y="258" class="diagram-copy">Citations · SSE</text>
+                  <path d="M640 124V163H574V201" class="diagram-support-line" marker-end="url(#rag-arrow)"/>
+                  <rect x="245" y="312" width="795" height="31" rx="4" class="diagram-support"/>
+                  <text x="642" y="332" class="diagram-support-copy">RAGAS evaluation measures faithfulness, relevancy, context precision, and recall</text>
+                </g>
+              </svg>
+            </div>
+          </figure>
+        </article>
       </div>
       <div class="more-work"><span>ALSO BUILT</span><a href="https://github.com/Apoorva5544/async-invoice-service" target="_blank" rel="noreferrer">Async Invoice Service <span>Celery · Redis</span> ↗</a><a href="https://github.com/Apoorva5544/thumbnail-microservice" target="_blank" rel="noreferrer">Thumbnail Microservice <span>FastAPI · CI/CD</span> ↗</a></div>
     </section>

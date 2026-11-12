@@ -5,4 +5,5 @@ _source_assets
 *.zip
 *.pdf
 !public/assets/Apoorva_Srinivasan_Resume.pdf
+!assets/Apoorva_Srinivasan_Resume.pdf
 *.tex
